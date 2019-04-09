@@ -1819,3 +1819,16 @@ node_modules/vary/LICENSE
 node_modules/vary/README.md
 node_modules/vary/index.js
 node_modules/vary/package.json
+package-lock.json
+package.json
+node_modules/.bin/mime
+node_modules/.bin/mime.cmd
+node_modules/accepts/HISTORY.md
+node_modules/accepts/LICENSE
+node_modules/accepts/README.md
+node_modules/accepts/index.js
+node_modules/accepts/package.json
+node_modules/array-flatten/LICENSE
+node_modules/array-flatten/README.md
+node_modules/array-flatten/array-flatten.js
+node_modules/array-flatten/package.json
