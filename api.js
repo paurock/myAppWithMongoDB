@@ -3,8 +3,10 @@ const router = express.Router()
 const Person = require("./person")
 
 router.get("/persons", (req, res)=>{
-    res.send({method: "GET"})
+    Person.find({})
+    .then(person=> res.send(person))
 })
+
 
 router.post("/persons", (req, res)=>{
     Person.create(req.body)
@@ -12,11 +14,14 @@ router.post("/persons", (req, res)=>{
     })
 
 router.put("/persons/:id", (req, res)=>{
-    res.send({method: "PUT"})
+    Person.findByIdAndUpdate({_id:req.params.id}, req.body)
+    .then(() => Person.findOne({_id: req.params.id}))
+    .then(person => res.send(person))﻿
 })
 
 router.delete("/persons/:id", (req, res)=>{
-    res.send({method: "DELETE"})
+    Person.deleteOne({_id:req.params.id})
+    .then(person=> res.send(person))
 })
 
 module.exports = router
