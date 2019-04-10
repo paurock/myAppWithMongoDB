@@ -1,22 +1,24 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { personFetchData } from '../actions/persons';
 
-const App = () => {
+class App extends Component {
    
-    useEffect(() => {
-      props.fetchData("/api/persons")
-    })
-    return (
-      <div className="App">
-        <ul>
-          <li>
-          </li>
-        </ul>
-      </div>
-    );
+  componentDidMount() {
+    this.props.fetchData("/api/persons")  
   }
+  render() { 
+    return <div>
+        <ul>{this.props.map((person, i) => {
+            <li key={i}>
+            {person.name}
+            </li>
+        })}          
+        </ul>
+      </div>   
+  }
+}
  
 
 const mapStateToProps = state => ({
