@@ -1,31 +1,32 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { personFetchData } from '../actions/persons';
 
-const App = () => {
+class App extends Component {
    
-    useEffect(() => {
-      props.fetchData("/api/persons")
-    })
-    return (
-      <div className="App">
-        <ul>
-          <li>
-          </li>
-        </ul>
-      </div>
-    );
+     conmponentDidMount() {
+      this.props.fetchData("/api/persons/")
+     }
+    render() {
+      console.log(this.props.persons)
+      return <div>
+      <ul>{this.props.persons.map((person, i) => 
+       <li key={i}>
+          {person.name}
+       </li>
+      )}       
+      </ul>
+      </div> 
   }
- 
+}
 
 const mapStateToProps = state => ({
   persons: state.persons
 })
 
-const mapDispatchToProps = dispatch =>   ({
-    fetchData: url => dispatch(personFetchData(url))
-  })
- 
+const mapDispatchToProps = dispatch => ({
+  fetchData: url=>dispatch(personFetchData(url))
+}) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

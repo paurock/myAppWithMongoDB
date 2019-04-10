@@ -9,7 +9,8 @@ export const personFetchDataSuccess = persons => {
 export const personFetchData = url =>  {
     return (dispatch) => {
         fetch(url)
-        .then(res=> res.ok ? res : throw new Error(res.statusText))
+        .then(res=> (res.ok) ? res : throw new Error(res.statusText)
+        })            
         .then(res=>res.json())
         .then(persons=>dispatch(personFetchDataSuccess(persons)))
     }
