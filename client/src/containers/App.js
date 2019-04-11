@@ -9,7 +9,13 @@ class App extends Component {
   render() {  
     console.log(this.props.persons)    
     return <div>
-       <ul>     
+       <ul> {this.props.persons.map((person, i) => 
+        <li key={i}>
+        <p>{person.name}</p>  
+        <p>{person.age}</p>
+        <p>{person.name}</p>       
+        </li>        
+        )}     
         </ul>
       </div>   
   }

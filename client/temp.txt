@@ -1,8 +1,8 @@
 {this.props.persons.map((person, i) => 
-         <li key={i}>{person.name}       
+         <li key={i}> <p>{person.name}</p>  
+        <p>{person.age}</p>
+         <p>{person.name}</p>       
          </li>        
         )}   
 
-          <p>{person.name}</p>  
-        <p>{person.age}</p>
-         <p>{person.name}</p>
+         

@@ -7,7 +7,6 @@ router.get("/persons", (req, res)=>{
     .then(person=> res.send(person))
 })
 
-
 router.post("/persons", (req, res)=>{
     Person.create(req.body)
     .then(person=> res.send(person))
