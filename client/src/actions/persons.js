@@ -5,7 +5,6 @@ export const personFetchDataSuccess = persons => {
     }
 }
 
-
 export const personFetchData = url =>  {
     return (dispatch) => {
         fetch(url)
@@ -13,9 +12,8 @@ export const personFetchData = url =>  {
             if (res.ok) {
             return res
         } 
-            throw new Error(res.statusText)
-            
-        } )      
+            throw new Error(res.statusText)            
+        })      
         .then(res=>res.json())
         .then(persons=>dispatch(personFetchDataSuccess(persons)))
     }

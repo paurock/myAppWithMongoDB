@@ -2,24 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { personFetchData } from '../actions/persons';
-
-class App extends Component {
-   
+class App extends Component {   
   componentDidMount() {
     this.props.fetchData("/api/persons")  
   }
-  render() { 
+  render() {  
+    console.log(this.props.persons)    
     return <div>
-        <ul>{this.props.map((person, i) => {
-            <li key={i}>
-            {person.name}
-            </li>
-        })}          
+       <ul>     
         </ul>
       </div>   
   }
-}
- 
+} 
 
 const mapStateToProps = state => ({
   persons: state.persons
