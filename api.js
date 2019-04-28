@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Person = require("./persons");
+const Person = require("./person");
 
 router.get("/persons", (req, res)=>{
     Person.find({})
@@ -23,3 +23,4 @@ router.delete("/persons/:id", (req, res)=>{
     })
 
 module.exports = router
+

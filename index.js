@@ -11,6 +11,6 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use("/api", require("./api"))
 
-app.listen(4000, ()=>{
+app.listen(5000, ()=>{
     console.log("server is listening")
-}) 
+})
