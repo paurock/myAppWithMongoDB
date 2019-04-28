@@ -2,7 +2,7 @@ POST http://localhost:4000/api/persons/
 content-type: application/json
 
 {
-    "name":"Den", 
+    "name":"Leo", 
     "age":25,
     "status": "single"
 }
@@ -14,7 +14,7 @@ DELETE http://localhost:4000/api/persons/5cad955900be31078cbc5f74
 GET http://localhost:4000/api/persons/
 
 ###
-PUT http://localhost:4000/api/persons/5cad95b300be31078cbc5f75
+PUT http://localhost:4000/api/persons/5cc482d8affb9537e0d276ff
 content-type: application/json
 
 {
